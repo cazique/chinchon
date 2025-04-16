@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkuoxkowaq1lf"]
+
+[ext_resource type="Script" path="res://scripts/game/combination_area.gd" id="1_8bkia"]
+[ext_resource type="Texture2D" uid="uid://bnk2lbpqc04am" path="res://assets/images/ui/combination_area_bg.png" id="2_dvmnn"]
+[ext_resource type="FontFile" uid="uid://cbrwe0wv4lsqf" path="res://assets/fonts/Montserrat-Medium.ttf" id="3_pck5s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yaqrn"]
+bg_color = Color(0.0784314, 0.243137, 0.0784314, 0.584314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.329412, 0.560784, 0.294118, 0.898039)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CombinationArea" type="Node2D"]
+script = ExtResource("1_8bkia")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.184314)
+scale = Vector2(1.2, 0.6)
+texture = ExtResource("2_dvmnn")
+
+[node name="CombinationsContainer" type="HBoxContainer" parent="."]
+offset_left = -500.0
+offset_top = -100.0
+offset_right = 500.0
+offset_bottom = 100.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Group1" type="PanelContainer" parent="CombinationsContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_yaqrn")
+
+[node name="CardContainer" type="HBoxContainer" parent="CombinationsContainer/Group1"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Group2" type="PanelContainer" parent="CombinationsContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_yaqrn")
+
+[node name="CardContainer" type="HBoxContainer" parent="CombinationsContainer/Group2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Group3" type="PanelContainer" parent="CombinationsContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_yaqrn")
+
+[node name="CardContainer" type="HBoxContainer" parent="CombinationsContainer/Group3"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="InstructionLabel" type="Label" parent="."]
+visible = false
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("3_pck5s")
+theme_override_font_sizes/font_size = 20
+text = "Arrastra combinaciones aquí para jugar"
+horizontal_alignment = 1
+vertical_alignment = 1
